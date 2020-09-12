@@ -4,7 +4,6 @@ class Post < ActiveRecord::Base
   # summary is max 250 chars
   # category is either "Fiction" or "Non-Fiction"
   # custom validation for clickbaity title
-  include ActiveModel::Validations
   validates :title, presence: true
   validate :title_is_clickbait
   validates :content, length: {minimum: 250}
